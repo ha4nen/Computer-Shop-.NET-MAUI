@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="lab12.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:lab12"
+    Shell.FlyoutBehavior="Disabled"
+    Title="lab12">
+
+    <TabBar>
+        <Tab Title="Home" Icon="home.png">
+            <ShellContent ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage" />
+        </Tab>
+        <Tab Title="Store" Icon="store.png">
+            <ShellContent ContentTemplate="{DataTemplate local:Page2}" Route="Page2" />
+        </Tab>
+        <Tab Title="Shop" Icon="shop.png">
+            <ShellContent ContentTemplate="{DataTemplate local:Page3}" Route="Page3" />
+        </Tab>
+        <Tab Title="Payment" Icon="payment.png">
+            <ShellContent ContentTemplate="{DataTemplate local:Page4}" Route="Page4" />
+        </Tab>
+    </TabBar>
+
+</Shell> 

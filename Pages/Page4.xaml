@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="lab12.Page4"
+             Title="Page4">
+
+        <VerticalStackLayout BackgroundColor="Red">
+
+        <StackLayout BackgroundColor="White" Padding="40" Margin="20,0,20,20">
+
+                <Grid>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                <Label TextColor="Black" Text="CardHolder Name" Grid.Row="0" />
+                <Entry x:Name="CardHolder" BackgroundColor="Beige"  Grid.Row="1"/>
+                <Label TextColor="Black" Text="Card No."  Grid.Row="2"/>
+                <Entry x:Name="CardNo" BackgroundColor="Beige" Grid.Row="3"/>
+                <Label TextColor="Black" Text="Date"   WidthRequest="100"  Grid.Row="4" />
+                    <Entry x:Name="Date" BackgroundColor="Beige" WidthRequest="100" Grid.Row="5"/>
+                <Label TextColor="Black" Text="CVV"    WidthRequest="100" Grid.Row="4" Grid.Column="1"/>
+                <Entry x:Name="Cvv" BackgroundColor="Beige" WidthRequest="100" Grid.Row="5" Grid.Column="1"/>
+                <RadioButton Content="Cache" TextColor="Black" Grid.Row="6"/>
+                <RadioButton Content="Intallments" TextColor="Black" Grid.Row="7" />
+                </Grid>
+
+                <StackLayout>
+                    <ListView x:Name="Payment_List_View">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout>
+
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                    <StackLayout>
+                        <Frame BorderColor="Black"
+                   CornerRadius="10" 
+                   Padding="0"
+                   WidthRequest="200">
+
+                            <Button 
+                    x:Name="Pay"
+                FontAttributes="Bold" 
+                Text="Pay" 
+                TextColor="White" 
+                BackgroundColor="Red" 
+                WidthRequest="200"
+                 
+                    
+                    />
+
+                        </Frame>
+
+
+
+                    </StackLayout>
+                <Label x:Name="lbTotal" Text="Total: 0" TextColor="Black" FontAttributes="Bold" HorizontalOptions="Center" />
+
+            </StackLayout>
+            </StackLayout>
+
+
+        <ListView x:Name="Usr_List_View" Margin="200,0,0,0" HorizontalOptions="Center">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Label TextColor="White" Text="{Binding Name}"/>
+                            <Label Text="_____________________" TextColor="Red"/>
+                            <Label TextColor="White" Text="{Binding ID}"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </VerticalStackLayout>
+
+
+</ContentPage>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="lab12.Page3"
+             Title="Page3">
+    <VerticalStackLayout BackgroundColor="Red">
+        <StackLayout BackgroundColor="White" Margin="20,0,20,20" Padding="50"  Orientation="Vertical">
+            <StackLayout HorizontalOptions="Center" Margin="20">
+                <Label  TextColor="Black" FontSize="Medium" Text="Memory Size GB"/>
+            <HorizontalStackLayout HorizontalOptions="Center">
+            <Button Text="-" x:Name="min1" Clicked="min1_Clicked" />
+                    <Label x:Name="lbMem" Text="0" BackgroundColor="Beige" TextColor="Black"/>
+            <Button Text="+" x:Name="plus1" Clicked="plus1_Clicked"/>
+            </HorizontalStackLayout>
+             </StackLayout>
+
+            <StackLayout HorizontalOptions="Center" Margin="20">
+                <Label  TextColor="Black" HorizontalOptions="Center" FontSize="Medium" Text="Storage Size GB"/>
+            <HorizontalStackLayout HorizontalOptions="Center">
+                <Button Text="-" x:Name="MIN2" Clicked="MIN2_Clicked"/>
+                    <Label x:Name="lbStr" Text="0" BackgroundColor="Beige" TextColor="Black"/>
+                <Button Text="+" x:Name="plus2" Clicked="plus2_Clicked"/>
+            </HorizontalStackLayout>
+            </StackLayout>
+
+            <StackLayout HorizontalOptions="Center" Margin="20">
+                    <Label  TextColor="Black" HorizontalOptions="Center" FontSize="Medium" Text="Monitor Size in"/>
+            <HorizontalStackLayout HorizontalOptions="Center">
+                <Button Text="-" x:Name="min3" Clicked="min3_Clicked" />
+                    <Label x:Name="lbMon" Text="0" BackgroundColor="Beige" TextColor="Black"/>
+                <Button Text="+" x:Name="plus3" Clicked="plus3_Clicked"/>
+            </HorizontalStackLayout>
+            </StackLayout>
+
+            <Label x:Name="lbTotal" Text="Total: 0" TextColor="Black" FontAttributes="Bold" HorizontalOptions="Center" />
+        </StackLayout>
+        <ListView x:Name="Usr_List_View" Margin="200,0,0,0" HorizontalOptions="Center">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Label TextColor="White" Text="{Binding Name}"/>
+                            <Label Text="_____________________" TextColor="Red"/>
+                            <Label TextColor="White" Text="{Binding ID}"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="lab12.Page2"
+             Title="Page2">
+    <StackLayout BackgroundColor="Red">
+
+        <StackLayout BackgroundColor="White" Padding="10" Margin="20,0,20,20">
+            <HorizontalStackLayout HorizontalOptions="Center">
+            <StackLayout Margin="50">
+            <Label Text="CPU" FontSize="Medium" TextColor="Black"/>
+                <RadioButton x:Name="rb1c" TextColor="Black" Content="Core i3" CheckedChanged="rb1c_CheckedChanged" />
+                    <RadioButton x:Name="rb2c" TextColor="Black" Content="Core i5" CheckedChanged="rb1c_CheckedChanged"/>
+                    <RadioButton x:Name="rb3c" TextColor="Black" Content="Core i7" CheckedChanged="rb1c_CheckedChanged"/>
+                    <RadioButton x:Name="rb4c" TextColor="Black" Content="Core i9" CheckedChanged="rb1c_CheckedChanged"/>
+            </StackLayout>
+                <StackLayout Margin="50" >
+                    <Label Text="Storage" FontSize="Medium"  TextColor="Black"/>
+                <RadioButton x:Name="rb1s" TextColor="Black" Content="SSD" CheckedChanged="rb1s_CheckedChanged"/>
+                    <RadioButton x:Name="rb2s" TextColor="Black" Content="HDD" CheckedChanged="rb1s_CheckedChanged"/>
+
+            </StackLayout>
+        </HorizontalStackLayout>
+            <StackLayout Margin="20,0,20,20"  HorizontalOptions="Center">
+                <Label Text="Montor" FontSize="Medium"  TextColor="Black"/>
+                <RadioButton x:Name="rb1m" TextColor="Black" Content="Philips"/>
+                <RadioButton x:Name="rb2m" TextColor="Black" Content="NEC"/>
+                <RadioButton x:Name="rb3m" TextColor="Black" Content="HP"/>
+
+
+            </StackLayout>
+        </StackLayout>
+        <ListView x:Name="Usr_List_View" Margin="200,0,0,0" HorizontalOptions="Center">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Label TextColor="White" Text="{Binding Name}"/>
+                            <Label Text="_____________________" TextColor="Red"/>
+                            <Label TextColor="White" Text="{Binding ID}"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
